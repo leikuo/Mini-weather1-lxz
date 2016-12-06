@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="45.0dp"
+        android:background="#ffcd2626"
+        >
+        <TextView
+            android:id="@+id/title_name1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="选择城市："
+            android:textColor="#ffffffff"
+            android:textSize="20dp"/>
+        <ImageView
+            android:id="@+id/title_back1"
+            android:layout_width="45.0dp"
+            android:layout_height="45.0dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/base_action_bar_back_normal"
+            />
+        <ImageView
+            android:layout_width="1.0dp"
+            android:layout_height="40.0dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity = "center"
+            android:layout_toRightOf="@+id/title_back1"
+            android:background="#A71717"
+            android:gravity="center" />
+
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/search_edit"
+        android:layout_width="match_parent"
+        android:layout_height="50.0dip"
+        android:layout_below = "@id/relativeLayout1"
+        android:hint="搜索全国城市(中文)"
+        android:layout_margin="10.0dp"
+        android:drawableLeft="@drawable/magnifying_glass"
+        android:drawablePadding="8.0dp"
+        android:paddingBottom="8.0dp"
+        android:paddingLeft="10.0dp"
+        android:paddingRight="30.0dp"
+        android:paddingTop="8.0dp"
+        android:singleLine="true"
+        android:background="@drawable/contact_search_box_edittext_keyword_background"
+        android:textColor="#ff000000"
+        android:textColorHint="#aacccc"
+        android:textSize="15.0sp"
+        />
+    <ListView
+        android:id="@+id/list_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </ListView>
+
+
+</LinearLayout>
