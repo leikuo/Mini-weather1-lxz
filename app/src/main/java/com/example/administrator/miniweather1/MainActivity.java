@@ -13,6 +13,7 @@ import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,9 +40,10 @@ import pku.ss.lei.util.NetUtil;
 public class MainActivity extends Activity implements View.OnClickListener {
     //private static final int UPDATE_TODAY_WEATHER = 1;
 
-    private ImageView mUpdateBtn;
-
+    private ImageView mUpdateBtn;//刷新按钮
     private ImageView mCitySelect;//选择城市按钮
+
+    private ProgressBar mUpdateProgressBar;  //进度条
 
     private String cityCode = "101010100";
     //定义相关的控件对象
@@ -84,6 +86,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         mUpdateBtn = (ImageView) findViewById(R.id.title_update_btn);
         mUpdateBtn.setOnClickListener(this);         //为更新按钮ImageView增加单击事件
+
+        mUpdateProgressBar = (ProgressBar) findViewById(R.id.title_update_progress);
 
         if (NetUtil.getNetworkState(this) != NetUtil.NETWORK_NONE) {
             Log.d("myWeather", "网络OK!");
@@ -427,6 +431,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
         //weatherImg.setImageResource(R.drawable.biz_plugin_weather_yujiaxue);
         Toast.makeText(MainActivity.this, "更新成功!", Toast.LENGTH_LONG).show();
 
+        //恢复更新按钮
+        mUpdateBtn.setVisibility(View.VISIBLE);
+        mUpdateProgressBar.setVisibility(View.GONE);
 
     }
 

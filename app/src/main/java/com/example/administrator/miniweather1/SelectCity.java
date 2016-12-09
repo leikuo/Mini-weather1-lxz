@@ -40,6 +40,7 @@ public class SelectCity extends Activity implements View.OnClickListener{
         selectCT_tv = (TextView) findViewById(R.id.title_name1);
         mBackBtn = (ImageView) findViewById(R.id.title_back1);
         mBackBtn.setOnClickListener(this);
+
         dataCity = new ArrayList<String>();  //用于存放城市数据
         dataCode = new ArrayList<String>();  //用于存放对应的城市代码数据
         mApplication = (MyApplication) getApplication(); //用Application来进行数据传递
