@@ -3,4 +3,172 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <RelativeLayout
+        android:id="@+id/yestay_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp">
+
+        <TextView
+            android:id="@+id/yesterday_week"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="星期一"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"/>
+
+        <ImageView
+            android:id="@+id/yesterday_weather"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/yesterday_week"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/biz_plugin_weather_0_50"
+            />
+
+        <TextView
+            android:id="@+id/yesterday_temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/yesterday_weather"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:text="-2℃～7℃"
+            android:textColor="@android:color/white"
+            android:textSize="15dp"/>
+
+        <TextView
+            android:id="@+id/yesterday_weatherTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/yesterday_temperature"
+            android:layout_centerHorizontal="true"
+            android:text="多云转晴"
+            android:textColor="@android:color/white"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/yesterday_fengli"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/yesterday_weatherTv"
+            android:layout_centerHorizontal="true"
+            android:text="微风"
+            android:textColor="@android:color/white"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/day1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@id/yestay_detail">
+
+        <TextView
+            android:id="@+id/day1_week"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="星期二"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"/>
+        <ImageView
+            android:id="@+id/day1_weather"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:layout_below="@id/day1_week"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dip"
+            android:src="@drawable/biz_plugin_weather_0_50"/>
+        <TextView
+            android:id="@+id/day1_temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/day1_weather"
+            android:layout_marginTop="10dip"
+            android:layout_centerHorizontal="true"
+            android:text="-2℃～7℃"
+            android:textColor="@android:color/white"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/day1_weatherTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/day1_temperature"
+            android:layout_centerHorizontal="true"
+            android:text="多云转晴"
+            android:textColor="@android:color/white"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/day1_fengli"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/day1_weatherTv"
+            android:layout_centerHorizontal="true"
+            android:text="微风"
+            android:textColor="@android:color/white"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/day2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/day2_week"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="星期三"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"/>
+        <ImageView
+            android:id="@+id/day2_weather"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:layout_below="@id/day2_week"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dip"
+            android:src="@drawable/biz_plugin_weather_0_50"/>
+        <TextView
+            android:id="@+id/day2_temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/day2_weather"
+            android:layout_marginTop="10dip"
+            android:layout_centerHorizontal="true"
+            android:text="-2℃～7℃"
+            android:textColor="@android:color/white"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/day2_weatherTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/day2_temperature"
+            android:layout_centerHorizontal="true"
+            android:text="多云转晴"
+            android:textColor="@android:color/white"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/day2_fengli"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/day2_weatherTv"
+            android:layout_centerHorizontal="true"
+            android:text="微风"
+            android:textColor="@android:color/white"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
 </RelativeLayout>

@@ -10,7 +10,10 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -32,12 +35,14 @@ import java.io.InputStreamReader;
 import java.io.StringReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 
 import pku.ss.lei.bean.TodayWeather;
 import pku.ss.lei.util.NetUtil;
 
 
-public class MainActivity extends Activity implements View.OnClickListener {
+public class MainActivity extends Activity implements View.OnClickListener,ViewPager.OnPageChangeListener {
     //private static final int UPDATE_TODAY_WEATHER = 1;
 
     private ImageView mUpdateBtn;//刷新按钮
@@ -53,8 +58,61 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
 
     private IntentFilter intentFilter;
+    private ViewPager viewPager;
+    private ViewPagerAdapter viewPagerAdapter;
+    List<View> views;
+
+    //PagerView导航小圆点
+    private ImageView[] dots;
+    //声明一个int型数组，用于存放两个小圆点的id
+    private int[] ids = {R.id.iv01, R.id.iv02};
+
+
     BReceiver mReeiver;
 
+    private void initViews(){
+        LayoutInflater inflater = LayoutInflater.from(this);
+        views = new ArrayList<View>();
+
+        views.add(inflater.inflate(R.layout.first_3day,null));
+        views.add(inflater.inflate(R.layout.second_3day,null));
+
+        viewPagerAdapter = new ViewPagerAdapter(views, this);
+        viewPager = (ViewPager) findViewById(R.id.viewpager);
+        viewPager.setAdapter(viewPagerAdapter);
+
+        //为ViewPager控件设置页面变化的监听事件
+        viewPager.addOnPageChangeListener(this);
+    }
+
+    void initDots(){    //用于将两个小圆点控件对象存入数组中
+        dots = new ImageView[views.size()];
+        for(int i = 0; i < views.size(); i++){
+            dots[i] = (ImageView) findViewById(ids[i]);
+        }
+
+    }
+
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+    }
+
+    @Override
+    public void onPageSelected(int position) {
+        for(int i = 0; i < ids.length; i++){
+            if(i == position){
+                dots[i].setImageResource(R.drawable.page_indicator_focused);
+            }else {
+                dots[i].setImageResource(R.drawable.page_indicator_unfocused);
+            }
+        }
+    }
+
+    @Override
+    public void onPageScrollStateChanged(int state) {
+
+    }
 
     class BReceiver extends BroadcastReceiver {//广播接收器 内部类
         @Override
@@ -105,6 +163,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
         initView();
 
         startService();
+
+        initViews();
+
+        initDots();
     }
 
     @Override
