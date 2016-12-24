@@ -10,12 +10,143 @@ public class TodayWeather {
     private String shidu;
     private String pm25;
     private String quality;
-    private String fengxiang;
+    private WeatherDetail[] weatherDetails = new WeatherDetail[5];
+
+    /*private String fengxiang;
     private String fengli;
     private String date;
     private String high;
     private String low;
-    private String type;
+    private String type;*/
+
+
+    private String yesterdayDate;
+    private String yesterdayHigh;
+    private String yesterdayLow;
+    private String yesterdayType;
+    private String yesterdayFengxiang;
+    private String yesterdayFengli;
+
+    public TodayWeather(){
+        for(int i = 0; i < weatherDetails.length; i++){
+            weatherDetails[i] = new WeatherDetail();
+        }
+    }
+
+
+    //五天天气的相同特征
+    public class WeatherDetail{
+        private String date;
+        private String high;
+        private String low;
+        private String type;
+        private String fengxiang;
+        private String fengli;
+
+        public String getDate() {
+            return date;
+        }
+
+        public void setDate(String date) {
+            this.date = date;
+        }
+
+        public String getHigh() {
+            return high;
+        }
+
+        public void setHigh(String high) {
+            this.high = high;
+        }
+
+        public String getLow() {
+            return low;
+        }
+
+        public void setLow(String low) {
+            this.low = low;
+        }
+
+        public String getType() {
+            return type;
+        }
+
+        public void setType(String type) {
+            this.type = type;
+        }
+
+        public String getFengxiang() {
+            return fengxiang;
+        }
+
+        public void setFengxiang(String fengxiang) {
+            this.fengxiang = fengxiang;
+        }
+
+        public String getFengli() {
+            return fengli;
+        }
+
+        public void setFengli(String fengli) {
+            this.fengli = fengli;
+        }
+    }
+
+    public WeatherDetail getWeatherDetails(int i) {
+        return this.weatherDetails[i];
+    }
+
+    public void setWeatherDetails(WeatherDetail weatherDetails,int i) {
+        this.weatherDetails[i] = weatherDetails;
+    }
+
+    public String getYesterdayDate() {
+        return yesterdayDate;
+    }
+
+    public void setYesterdayDate(String yesterdayDate) {
+        this.yesterdayDate = yesterdayDate;
+    }
+
+    public String getYesterdayHigh() {
+        return yesterdayHigh;
+    }
+
+    public void setYesterdayHigh(String yesterdayHigh) {
+        this.yesterdayHigh = yesterdayHigh;
+    }
+
+    public String getYesterdayLow() {
+        return yesterdayLow;
+    }
+
+    public void setYesterdayLow(String yesterdayLow) {
+        this.yesterdayLow = yesterdayLow;
+    }
+
+    public String getYesterdayType() {
+        return yesterdayType;
+    }
+
+    public void setYesterdayType(String yesterdayType) {
+        this.yesterdayType = yesterdayType;
+    }
+
+    public String getYesterdayFengxiang() {
+        return yesterdayFengxiang;
+    }
+
+    public void setYesterdayFengxiang(String yesterdayFengxiang) {
+        this.yesterdayFengxiang = yesterdayFengxiang;
+    }
+
+    public String getYesterdayFengli() {
+        return yesterdayFengli;
+    }
+
+    public void setYesterdayFengli(String yesterdayFengli) {
+        this.yesterdayFengli = yesterdayFengli;
+    }
 
     public String getCity() {
         return city;
@@ -65,7 +196,7 @@ public class TodayWeather {
         this.quality = quality;
     }
 
-    public String getFengxiang() {
+    /*public String getFengxiang() {
         return fengxiang;
     }
 
@@ -111,7 +242,7 @@ public class TodayWeather {
 
     public void setType(String type) {
         this.type = type;
-    }
+    }*/
 
     @Override
     public String toString() {
@@ -122,12 +253,12 @@ public class TodayWeather {
                 ", shidu='" + shidu + '\'' +
                 ", pm25='" + pm25 + '\'' +
                 ", quality='" + quality + '\'' +
-                ", fengxiang='" + fengxiang + '\'' +
-                ", fengli='" + fengli + '\'' +
-                ", date='" + date + '\'' +
-                ", high='" + high + '\'' +
-                ", low='" + low + '\'' +
-                ", type='" + type + '\'' +
+                //", fengxiang='" + fengxiang + '\'' +
+                //", fengli='" + fengli + '\'' +
+                //", date='" + date + '\'' +
+                //", high='" + high + '\'' +
+                //", low='" + low + '\'' +
+                //", type='" + type + '\'' +
                 '}';
     }
 }

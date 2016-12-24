@@ -1,9 +1,7 @@
 package pku.ss.lei.util;
-
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-
 /**
  * Created by Administrator on 2016/11/15.
  */
